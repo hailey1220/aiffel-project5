@@ -74,6 +74,7 @@
       <div class="view-head">
         <h2>오늘의 추천 주제</h2>
         <p class="hint">쓰고 싶은 주제를 하나 골라 주세요.</p>
+        <p class="sample-note">ⓘ 현재는 예시 트렌드 데이터예요</p>
       </div>
       <div id="topic-list" class="card-grid"></div>
     </section>
@@ -82,12 +83,22 @@
     <section id="brief-view" class="view" hidden>
       <div class="view-head row">
         <button id="back-btn" class="btn ghost">← 다른 주제 고르기</button>
-        <button id="copy-btn" class="btn primary">브리프 복사</button>
+        <div class="brief-actions">
+          <button id="copy-btn" class="btn primary">브리프 복사</button>
+          <button id="open-chatgpt-btn" class="btn ghost" data-service="chatgpt">ChatGPT에서 열기 ↗</button>
+          <button id="open-claude-btn" class="btn ghost" data-service="claude">Claude에서 열기 (붙여 넣기) ↗</button>
+        </div>
       </div>
       <article id="brief" class="brief"></article>
       <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
     </section>
   </main>
+
+  <!-- Claude 버튼용 안내: 화면 위쪽에 고정되어 스크롤 위치와 상관없이 보임 -->
+  <div id="toast" class="toast" role="status" aria-live="assertive" hidden>
+    <p id="toast-text"></p>
+    <button type="button" id="toast-close" class="toast-close" aria-label="안내 닫기">×</button>
+  </div>
 
   <script src="mock-data.js"></script>
   <script src="app.js"></script>
