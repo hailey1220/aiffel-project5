@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>리빙 트렌드 플래너</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <p class="eyebrow">리빙 블로그 트렌드 플래너</p>
+      <h1>오늘 뭐 쓰지? 버튼 하나로 기획 끝</h1>
+      <p class="sub" id="today"></p>
+    </header>
+
+    <!-- 1단계: 시작 -->
+    <section id="start-view" class="view">
+      <button id="start-btn" class="btn primary large">오늘 기획 시작</button>
+    </section>
+
+    <!-- 2단계: 추천 주제 3개 -->
+    <section id="topics-view" class="view" hidden>
+      <div class="view-head">
+        <h2>오늘의 추천 주제</h2>
+        <p class="hint">쓰고 싶은 주제를 하나 골라 주세요.</p>
+      </div>
+      <div id="topic-list" class="card-grid"></div>
+    </section>
+
+    <!-- 3단계: 포스팅 브리프 -->
+    <section id="brief-view" class="view" hidden>
+      <div class="view-head row">
+        <button id="back-btn" class="btn ghost">← 다른 주제 고르기</button>
+        <button id="copy-btn" class="btn primary">브리프 복사</button>
+      </div>
+      <article id="brief" class="brief"></article>
+      <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="mock-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
