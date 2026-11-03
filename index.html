@@ -14,8 +14,58 @@
       <p class="sub" id="today"></p>
     </header>
 
+    <!-- 0단계: 블로그 프로필 -->
+    <section id="profile-view" class="view" hidden>
+      <div class="view-head">
+        <h2>블로그 프로필</h2>
+        <p class="hint">한 번만 저장해 두면 브리프에 내 블로그 스타일이 자동으로 들어가요. <span class="req">*</span> 필수</p>
+      </div>
+      <form id="profile-form" class="form" novalidate>
+        <div class="field" data-field="field">
+          <label for="p-field">블로그 분야 <span class="req">*</span></label>
+          <input id="p-field" name="field" type="text" placeholder="예: 리빙·살림" />
+          <p class="error"></p>
+        </div>
+
+        <fieldset class="field" data-field="categories">
+          <legend>카테고리 (여러 개 선택) <span class="req">*</span></legend>
+          <div class="chips" id="p-categories"></div>
+          <input id="p-categories-extra" name="categoriesExtra" type="text" placeholder="목록에 없으면 직접 입력 (쉼표로 구분)" />
+          <p class="error"></p>
+        </fieldset>
+
+        <div class="field" data-field="tone">
+          <label for="p-tone">글 톤 <span class="req">*</span></label>
+          <input id="p-tone" name="tone" type="text" placeholder="예: 친근한 존댓말, 직접 써 본 경험 위주, 장단점 솔직하게" />
+          <p class="error"></p>
+        </div>
+
+        <div class="field" data-field="titleStyle">
+          <label for="p-title-style">제목 스타일 <span class="req">*</span></label>
+          <input id="p-title-style" name="titleStyle" type="text" placeholder="예: 연도 + 핵심 키워드 + 검색 의도(가격비교·방법·단점·사용법) + 질문형 훅" />
+          <p class="error"></p>
+        </div>
+
+        <div class="field" data-field="keywords">
+          <label for="p-keywords">관심 키워드 <span class="opt">(선택)</span></label>
+          <input id="p-keywords" name="keywords" type="text" placeholder="예: 가습기, 김장, 수납, 전기요 (쉼표로 구분)" />
+          <p class="help">비워 둬도 저장돼요. 추천 주제는 시즌·행사 기준으로 나와요.</p>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="profile-cancel" class="btn ghost" hidden>취소</button>
+          <button type="submit" class="btn primary">프로필 저장</button>
+        </div>
+        <p id="profile-status" class="form-status" role="alert"></p>
+      </form>
+    </section>
+
     <!-- 1단계: 시작 -->
-    <section id="start-view" class="view">
+    <section id="start-view" class="view" hidden>
+      <div class="profile-summary">
+        <p id="profile-summary-text"></p>
+        <button id="edit-profile-btn" class="btn ghost small">프로필 수정</button>
+      </div>
       <button id="start-btn" class="btn primary large">오늘 기획 시작</button>
     </section>
 
