@@ -229,7 +229,7 @@
   $("profile-cancel").addEventListener("click", () => show("start"));
   $("edit-profile-btn").addEventListener("click", openProfile);
 
-  // GPT·제미나이에 그대로 붙여 넣기 좋은 텍스트 형식
+  // ChatGPT·Claude에 그대로 붙여 넣기 좋은 텍스트 형식
   // 맨 위에 프로필의 글 톤·제목 스타일을 넣어 따로 설명하지 않아도 되게 함
   function briefToText(t) {
     const b = currentBrief;
@@ -394,7 +394,7 @@
     const status = $("copy-status");
     try {
       await copyText(briefToText(selected));
-      status.textContent = "브리프를 복사했어요. GPT·제미나이에 붙여 넣어 보세요.";
+      status.textContent = "브리프를 복사했어요. ChatGPT나 Claude에 붙여 넣어 보세요.";
     } catch {
       status.textContent = "복사에 실패했어요. 브리프 내용을 직접 드래그해 복사해 주세요.";
     }
